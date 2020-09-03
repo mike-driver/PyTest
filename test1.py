@@ -1,11 +1,12 @@
+import file_functions
 import functions
 from decimal import Decimal
 
 # functions.test_string_printing()
 # functions.some_maths()
-#functions.file_write_api_key()
+#file_functions.file_write_api_key()
 
-api_key = functions.file_read_api_key()
+api_key = file_functions.file_read_api_key()
 
 # data = functions.get_weather('frankfurt',api_key)
 # print ('FRANKFURT')
