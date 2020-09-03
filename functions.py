@@ -7,12 +7,8 @@
 # assert isinstance(data, object)
 import json
 
-
 def load_json(data):
-    #print (data)
     pyobject = json.loads(data)
-    #print (pyobject['main'])
-    #value = input("wait for input.....")
     return pyobject
 
 def get_weather(location, api_key):
@@ -28,8 +24,7 @@ def file_write_api_key():
     file1.close()
 
 def file_read_api_key():
-    #file1 = open("app_config.txt", "r")
-    file1 = open("c:/users/mdriver/weatherapikey/app_config.txt", "r")
+    file1 = open("c:/keys/weatherapikey/app_config.txt", "r")
     data = file1.readline()
     print ('api key:')
     print (data)
