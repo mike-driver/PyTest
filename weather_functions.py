@@ -24,7 +24,7 @@ def print_readable_data(json_dict):
 
     weather_description = json_dict['weather'][0]['main'] + ", " + json_dict['weather'][0]['description']
     location = str(json_dict['name']).upper()
-    print(f"Weather description in {location} " + str(json_dict['sys']['country']) +": " + weather_description)
+    print(f"Weather description in {location}, " + str(json_dict['sys']['country']) +": " + weather_description)
     print("Temp: " + str(celsius_temp))
     print("Feels like temp: " + str(feels_like_celsius_temp))
     print("Humidity: " + str(humidity))
