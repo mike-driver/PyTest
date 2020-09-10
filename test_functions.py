@@ -15,3 +15,9 @@ def some_maths():
     print(float1)
     print(is_true)
     print(type(is_true))
+
+def loop_in_range():
+    for x in range(0, 3):
+        print("X is equal to %d" % (x))
+        print(f"X is equal to {x}")
+    print("\n")
