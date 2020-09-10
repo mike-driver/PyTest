@@ -1,6 +1,5 @@
 import file_functions
 import weather_functions
-from decimal import Decimal
 
 from test_functions import loop_in_range
 loop_in_range()
