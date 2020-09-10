@@ -14,6 +14,7 @@ if dotest:
     test_functions.test_string_printing()
     test_functions.some_maths()
     test_functions.loop_in_range()
+    #test_functions.run()
 
 #testing file reading writing
 if dofilestuff:

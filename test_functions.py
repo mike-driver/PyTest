@@ -1,3 +1,6 @@
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+
 def test_string_printing():
     print("printing strings".upper())
     print("Hello world")
@@ -21,3 +24,8 @@ def loop_in_range():
         print("X is equal to %d" % (x))
         print(f"X is equal to {x}")
     print("\n")
+
+def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
+    server_address = ('', 8000)
+    httpd = server_class(server_address, handler_class)
+    httpd.serve_forever()
