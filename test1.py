@@ -29,9 +29,10 @@ if doweather:
     print(str(sampledata))
     print("\n")
 
-    city_names = ["london","Cardiff","edinburgh","leeds","plymouth","toronto","denver","Longyearbyen","Ushuaia","Kirkwall","Windy%20City","kansas","kansas%20city"]
+    city_names = ["london","Cardiff","edinburgh","Windy%20City","kansas","kansas%20city"]
     for city in city_names:
         data = weather_functions.get_weather(city,api_key)
+        #print("got data: " + str(data))
         weather_functions.print_readable_data(weather_functions.load_json(data))
         print("\n")
 
@@ -40,6 +41,7 @@ if doweather:
         city_name = input("enter city name:\n")
         if (city_name != 'quit') and (city_name != 'q'):
             data = weather_functions.get_weather(city_name,api_key)
+            #print("got data: " + str(data))
             weather_functions.print_readable_data(weather_functions.load_json(data))
 
 ########

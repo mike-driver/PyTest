@@ -7,6 +7,8 @@
 # assert isinstance(data, object)
 import json
 from decimal import Decimal
+import urllib.request
+from urllib.error import HTTPError
 
 
 def load_json(data):
@@ -40,8 +42,14 @@ def print_readable_data(json_dict):
     print("Sunset: " + str(json_dict['sys']['sunset']))
 
 def get_weather(location, api_key):
-    import urllib.request
-    weburl = urllib.request.urlopen(f"http://api.openweathermap.org/data/2.5/weather?q={location}&APPID={api_key}")
-    # print("result code: " + str(weburl.getcode()))
-    data = weburl.read()
+    try:
+        weburl = urllib.request.urlopen(f"http://api.openweathermap.org/data/2.5/weather?q={location}&APPID={api_key}")
+        print("result code: " + str(weburl.getcode()))
+        data = weburl.read()
+    except HTTPError as err:
+        if err.code != 200:
+            print("Error in City name!!!! .... but here's the weather in Cardif :-) ")
+            return get_weather("cardiff",api_key)
+            #exit(1)
+            data = weburl.read()
     return data
