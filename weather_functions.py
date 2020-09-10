@@ -17,6 +17,8 @@ def load_json(data):
 
 
 def print_readable_data(json_dict):
+    longitude = str(json_dict['coord']['lon'])
+    latitude = str(json_dict['coord']['lat'])
     kelvin_temp = json_dict['main']['temp']
     celsius_temp = round(Decimal(kelvin_temp - 273.15), 1)
     feels_like_kelvin_temp = json_dict['main']['feels_like']
@@ -26,10 +28,12 @@ def print_readable_data(json_dict):
     humidity = json_dict['main']['humidity']
     weather_description = json_dict['weather'][0]['main'] + ", " + json_dict['weather'][0]['description']
     location = str(json_dict['name']).upper()
+    country = str(json_dict['sys']['country'])
 
-    print(f"Weather description in {location}, " + str(json_dict['sys']['country']) + ": " + weather_description)
-    print("Temp: " + str(celsius_temp))
-    print("Feels like temp: " + str(feels_like_celsius_temp))
+    print(f"Weather now for {location}, {country}, longitude {longitude}, latitude {latitude} :")
+    print(weather_description)
+    print(f"Feels like : {feels_like_celsius_temp} (C)")
+    print(f"Actual Temp.: {celsius_temp} (C)")
     print("Humidity: " + str(humidity))
     print("Wind strength: " + str(wind_strength) + ", " + "Wind direction: " + str(wind_direction))
     print("Sunrise: " + str(json_dict['sys']['sunrise']))
