@@ -6,6 +6,6 @@ def file_write_api_key():
 def file_read_api_key():
     file1 = open("c:/keys/weatherapikey/app_config.txt", "r")
     data = file1.readline()
-    print ('api key:')
-    print (data)
+    #print ('api key:')
+    #print (data)
     return data

@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import file_functions
 import weather_functions
 import test_functions
@@ -27,9 +29,9 @@ if doweather:
     sampledata = weather_functions.get_weather("cardiff",api_key)
     print("Sample data:")
     print(str(sampledata))
-    print("\n")
+    test_functions.time_delta()
 
-    city_names = ["london","Cardiff","edinburgh","Windy%20City","kansas","kansas%20city"]
+    city_names = ["Cardiff","long%20ditton"]
     for city in city_names:
         data = weather_functions.get_weather(city,api_key)
         #print("got data: " + str(data))

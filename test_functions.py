@@ -1,4 +1,17 @@
+from datetime import datetime, timedelta
 from http.server import HTTPServer, BaseHTTPRequestHandler
+
+def time_delta():
+    # Using current time
+    ini_time_for_now = datetime.now() + timedelta(days=2)
+    # printing initial_date
+    print("initial_date", str(ini_time_for_now))
+    # Calculating future dates
+    future_date_after_someseconds = ini_time_for_now + timedelta(seconds=3600)
+    future_date_after_2days = ini_time_for_now + timedelta(days=2)
+    # printing calculated future_dates
+    print('future_date_after_somesecs:', str(future_date_after_someseconds))
+    print('future_date_after_2days:', str(future_date_after_2days))
 
 
 def test_string_printing():
