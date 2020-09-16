@@ -3,6 +3,7 @@ from datetime import datetime
 import file_functions
 import weather_functions
 import test_functions
+from class_test import Product
 
 dotest = False
 #dotest = True
@@ -10,6 +11,9 @@ dofilestuff = False
 #dofilestuff = True
 doweather = False
 doweather = True
+
+product = Product("Drill", 40.99)
+print(product.name + " " + str(product.price))
 
 #testing stuff
 if dotest:
