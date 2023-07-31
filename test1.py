@@ -5,8 +5,8 @@ import weather_functions
 import test_functions
 from class_test import Product
 
-dotest = False
-#dotest = True
+#dotest = False
+dotest = True
 dofilestuff = False
 #dofilestuff = True
 doweather = False
